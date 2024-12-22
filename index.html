@@ -21,6 +21,8 @@
         var adset_id = getParameterByName('adset_id');
         var ad_id = getParameterByName('ad_id');
         var adset_name = getParameterByName('adset_name');
+        var external_id = getParameterByName('external_id')
+        
 
         var startParams = "";
         
@@ -33,10 +35,7 @@
         if (adset_id) startParams += "adset_id=" + encodeURIComponent(adset_id) + "&";
         if (ad_id) startParams += "ad_id=" + encodeURIComponent(ad_id) + "&";
         if (adset_name) startParams += "adset_name=" + encodeURIComponent(adset_name) + "&";
-
-        
-
-        startParams = startParams.slice(0, -1);
+        if(external_id) startParams += "external_id=" + encodeURIComponent(external_id);
 
         var redirectUrl = "https://t.me/SpinWinAppbot?start=" + startParams;
 
